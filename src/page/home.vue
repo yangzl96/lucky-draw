@@ -82,7 +82,7 @@ export default {
     // 底部sheet
     let showSheet = ref(false)
     onMounted(() => {
-      localStorage.setItem('chance', 0)
+      // localStorage.setItem('chance', 0)
       count.value = localStorage.getItem('count') || 3
       console.log(count.value)
       rewardsList = JSON.parse(localStorage.getItem('rewardsList')) || []
@@ -348,8 +348,8 @@ export default {
     const getChance = () => {
       showText.value = false
       localStorage.clear()
-      // localStorage.setItem('chance', 1)
-      localStorage.setItem('chance', 0)
+      localStorage.setItem('chance', 1)
+      // localStorage.setItem('chance', 0)
       localStorage.setItem('count', 3)
       localStorage.setItem('rewardsList', JSON.stringify([]))
       count.value = 3
@@ -480,11 +480,10 @@ body {
 }
 .chance {
   position: absolute;
-  bottom: 0.1rem;
-  right: 0.3rem;
+  top: 0.03rem;
   font-size: 12px;
   color: #000;
-  /* color: rgba(209, 18, 33, 1); */
+  color: rgba(209, 18, 33, 1);
 }
 .luckyWrap {
   position: relative;
